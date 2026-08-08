@@ -1,13 +1,27 @@
 {
   "name": "tempmailpro",
-  "module": "index.ts",
-  "type": "module",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thatcelt/TempMailPro"
+  },
   "main": "./dist/index.js",
+  "module": "index.ts",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "bugs": {
+    "url": "https://github.com/thatcelt/TempMailPro/issues"
+  },
   "files": [
     "dist",
     "README.md",
     "LICENSE"
   ],
+  "homepage": "https://github.com/thatcelt/TempMailPro#readme",
   "keywords": [
     "tempmailpro",
     "tempmail",
@@ -17,23 +31,10 @@
     "temporary mail",
     "temp mail"
   ],
+  "license": "MIT",
   "scripts": {
     "build": "bun build.ts",
-    "test": "bun src/test.ts"
+    "dev": "bun src/index.ts"
   },
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/thatcelt/TempMailPro"
-  },
-  "bugs": {
-    "url": "https://github.com/thatcelt/TempMailPro/issues"
-  },
-  "homepage": "https://github.com/thatcelt/TempMailPro#readme",
-  "devDependencies": {
-    "@types/bun": "latest"
-  },
-  "peerDependencies": {
-    "typescript": "^5"
-  }
+  "type": "module"
 }
