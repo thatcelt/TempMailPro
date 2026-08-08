@@ -1,6 +1,6 @@
 {
   "name": "tempmailpro",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/thatcelt/TempMailPro"
@@ -36,5 +36,8 @@
     "build": "bun build.ts",
     "dev": "bun src/index.ts"
   },
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "netbun": "^0.4.1"
+  }
 }

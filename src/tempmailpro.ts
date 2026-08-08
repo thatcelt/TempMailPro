@@ -1,7 +1,14 @@
+import { fetch } from 'netbun';
+
 import type { Message } from './message';
 
 export class TempMailPro {
   private url: string = 'https://tempmailpro.io/api';
+  private proxy?: string;
+
+  constructor(proxy?: string) {
+    this.proxy = proxy;
+  }
 
   public activate = async (name: string): Promise<{ success: boolean }> =>
     (await (
@@ -10,6 +17,7 @@ export class TempMailPro {
         headers: {
           'Content-Type': 'application/json',
         },
+        proxy: this.proxy,
         body: JSON.stringify({ address: `${name}@tempmailpro.io` }),
       })
     ).json()) as { success: boolean };
@@ -18,6 +26,7 @@ export class TempMailPro {
     (await (
       await fetch(`${this.url}/emails/guest/${name}@tempmailpro.io`, {
         method: 'GET',
+        proxy: this.proxy,
         headers: {
           'Content-Type': 'application/json',
         },
